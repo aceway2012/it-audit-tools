@@ -1,0 +1,11 @@
+ #1.为避免以'#'开头的协议名被当作注释，故将注释行以 ' #' 开头为定义，注意前面有空格(单个，多个，space,tab均可)
+ #2.建议格式protocol_name port+port+port protocol_other_args 多个参数间用一个空格分割，同类参数间用+分割(前后不要有空格); 
+ #3.因协议参数的解析算法是自己实现,理论上这个格式完全可以自己定义; 
+ #4.程序框架会把整行作为protocol参数传到解写接口
+ #5.protocol_name参数时框架必须使用到， 用来选择执行你实现的接口
+ #mysql 3306
+ #ssh 22+22000+56000
+ http 80 POST+/acidbase/index.php
+ http 80+8080+8181 GET+/admin/login.php
+ #telnet
+ #ftp

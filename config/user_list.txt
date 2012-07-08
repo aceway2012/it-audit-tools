@@ -1,0 +1,19 @@
+ #一行一个密码，并账户名中不允许有空格， 所以把一行以空格进行split，如果结果元素大于1，则为配置行--则进行解析
+ #为避免以'#'开头的账户/密码被当作注释，故将注释行以 ' #' 开头为定义，注意前面有空格(单个，多个，space,tab均可)
+ #允许配置结合账户名并根据一定规则在运行时自动生成一些密码
+ #账户名格式: name [ON/OFF SUFFIX/PREFIX/BOTHFIX fix_word], 其中[...]内为可选
+
+ #以下三个项为自动给每个账户配置,避免重复手工操作, 为避免以[ON [OFF为开头的账户名解析漏洞，故此处还要进一步分析
+[ON  BOTHFIX ALL @123 @pwd]
+[OFF SUFFIX  ALL @123 @pwd]
+[OFF PREFIX  ALL @123 @pwd]
+
+account ON SUFFIX @123 @pwd 
+admin OFF PREFIX pwd# 123#
+administrator OFF BOTHFIX pwd 123
+backup
+bbs
+root
+test
+user
+ #[ON ON SUFFIX @abc @asdf
